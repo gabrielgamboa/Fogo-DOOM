@@ -9,7 +9,7 @@ function start () {
     createFireSource();
     renderFire();
 
-    setInterval(calculateFirePropagation, 50)
+    setInterval(calculateFirePropagation, 10)
 }
 
 
@@ -46,12 +46,13 @@ function updateFireInstensityPerPixel(currentPixelIndex) {
         return
     }
 
-    const decay = Math.floor(Math.random() *3) //quebrar a "uniformidade do fogo"
+    const decay = Math.floor(Math.random() * 3) //quebrar a "uniformidade do fogo"
     const belowPixelFireIntensity = firePixelArray[belowPixelIndex]
     const newFireIntensity = belowPixelFireIntensity - decay >= 0 ? belowPixelFireIntensity - decay : 0
 
     firePixelArray[currentPixelIndex - decay] = newFireIntensity //aponta o fogo pra esquerda
 }
+
 
 
 function renderFire() {
