@@ -55,6 +55,7 @@ function updateFireInstensityPerPixel(currentPixelIndex) {
 
 
 
+
 function renderFire() {
     const debug = false
     
